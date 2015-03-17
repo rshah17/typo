@@ -147,7 +147,7 @@ class Admin::ContentController < Admin::BaseController
     id = params[:id]
     id = params[:article][:id] if params[:article] && params[:article][:id]
     @article = Article.get_or_build_article(id)
-    source_id = params[:input][:merge_with]
+    source_id = params[:merge_with]
     if params[:article] and source_id != ""
       debugger  
       if Article.exists?(source_id)
